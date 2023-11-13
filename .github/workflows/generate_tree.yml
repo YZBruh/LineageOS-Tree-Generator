@@ -89,6 +89,7 @@ jobs:
         working_dump=$(pwd)
         python3 -m aospdtgen $working_dump
         echo "Successful!"
+        mv $working_dump/output /home/LOS-Generator
 
     - name: Setting up Git
       run: |
@@ -97,6 +98,7 @@ jobs:
 
     - name: Upload LineageOS Tree for GitHub 
       run: |
+        cd /home/LOS-Generator/output
         git init
         git branch -M lineage-${{ env.CN }}
         git add .

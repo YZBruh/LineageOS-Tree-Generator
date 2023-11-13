@@ -90,6 +90,11 @@ jobs:
         python3 -m aospdtgen $working_dump
         echo "Successful!"
 
+    - name: Setting up Git
+      run: |
+        git config --global user.name "${{ env.GN }}"
+        git config --global user.email "${{ env.GE }}"
+
     - name: Upload LineageOS Tree for GitHub 
       run: |
         git init

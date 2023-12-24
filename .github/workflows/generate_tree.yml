@@ -48,9 +48,6 @@ jobs:
     - name: Check Out
       uses: actions/checkout@v3
       
-    - name: Cleanup
-      uses: rokibhasansagar/slimhub_actions@main
-      
     - name: Set Swap Space
       uses: pierotofy/set-swap-space@master
       with:
